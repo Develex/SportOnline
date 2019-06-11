@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a3a88fceae.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <div class="col h-100">
+            <div class="d-flex h-100 flex-column">
+                <div class="row">
+                    {% include 'header.html.twig' %}
+                </div>
+                <div class="row bg-primary flex-grow-1">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <div class="w-100 pt-5">
+                            <div class="card mx-auto">
+                                <div class="card-header">
+                                    <h2>{{ pageTitle }}</h2>
+                                </div>
+                            </div>
+                            {% block body %}{% endblock %}
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block javascripts %}
+    <script rel="script" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script rel="script" src="{{ asset('js/popper.min.js') }}"></script>
+    <script rel="script" src="{{ asset('js/popper-utils.min.js') }}"></script>
+    <script rel="script" src="{{ asset('js/bootstrap.min.js') }}"></script>
+{% endblock %}
+
+</body>
 </html>
