@@ -66,4 +66,5 @@
 
 # Embedded web-server pid file
 /.web-server-pid
->>>>>>> f12c03c79c2ef3c0b3af27d7da7407f24a002d5c
+
+.idea/
