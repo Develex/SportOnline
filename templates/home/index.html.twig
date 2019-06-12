@@ -3,81 +3,58 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-.box{
-       border: 1px solid black;
-    width: 225px;
-    height: 75px;
+    <style>
+        .video_box{
+            border: 1px solid black;
+            width: 200px;
+            height: 125px;
+        }
+        .description_box{
+            border: 1px solid black;
+            width: 300px;
+            height: 75px;
+        }
+    </style>
+
+    <div class="row">
+        <div class="col-12 col-md-6 my-1">
+            <div class="card">
+                <h1>Example</h1>
+                <div class="video_box mb-1">
+                </div>
+                <div class="description_box">
+                </div>
+                <div class="stars">
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-12 col-md-6 my-1">
+            <div class="card card-body">
+            </div>
+        </div>
+        <div class="col-12 col-md-6 my-1">
+            <div class="card card-body">
+            </div>
+        </div>
+        <div class="col-12 col-md-6 my-1">
+            <div class="card card-body">
+            </div>
+        </div>
+        <div class="col-12 col-md-6 my-1">
+            <div class="card card-body">
+            </div>
+        </div>
+        <div class="col-12 col-md-6 my-1">
+            <div class="card card-body">
+            </div>
+        </div>
+    </div>
 
 
-}
-.download_button{
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    width: 20px;
-    height: 22px;
-    margin-left: 203px;
-}
 
-
-</style>
-<div class="container">
-
-    <div class="box mb-2">
-        <div class="download_button">
-            <i class="fas fa-arrow-down"></i>
-        </div>
-        <div class="row ml-0">
-            <i class="fas fa-play"></i>
-        </div>
-    </div>
-    <div class="box mb-2">
-        <div class="download_button">
-            <i class="fas fa-arrow-down"></i>
-        </div>
-        <div class="row ml-0">
-            <i class="fas fa-play"></i>
-        </div>
-    </div>
-    <div class="box mb-2">
-        <div class="download_button">
-            <i class="fas fa-arrow-down"></i>
-        </div>
-        <div class="row ml-0">
-            <i class="fas fa-play"></i>
-        </div>
-    </div>
-    <div class="box mb-2">
-        <div class="download_button">
-            <i class="fas fa-arrow-down"></i>
-        </div>
-        <div class="row ml-0">
-            <i class="fas fa-play"></i>
-        </div>
-    </div>
-    <div class="box mb-2">
-        <div class="download_button">
-            <i class="fas fa-arrow-down"></i>
-        </div>
-        <div class="row ml-0">
-            <i class="fas fa-play"></i>
-        </div>
-    </div>
-    <div class="box mb-2">
-        <div class="download_button">
-            <i class="fas fa-arrow-down"></i>
-        </div>
-        <div class="row ml-0">
-            <i class="fas fa-play"></i>
-        </div>
-    </div>
-    <div class="box mb-2">
-        <div class="download_button">
-            <i class="fas fa-arrow-down"></i>
-        </div>
-        <div class="row ml-0">
-            <i class="fas fa-play"></i>
-        </div>
-    </div>
-</div>
 {% endblock %}
