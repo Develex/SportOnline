@@ -69,3 +69,4 @@
 /.web-server-pid
 
 .idea/
+/src/Mirgrations/
