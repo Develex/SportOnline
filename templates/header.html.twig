@@ -1,8 +1,3 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -31,5 +26,14 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-out-line-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary border-bottom">
+    {% if is_granted("ROLE_USER") %}
+        <button class="navbar-toggler" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
+    {% endif %}
+
+    <div class="mx-auto">
+        <h1>Sportonline</h1>
+
     </div>
 </nav>
+
