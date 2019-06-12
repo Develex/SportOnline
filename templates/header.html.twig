@@ -1,39 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
-    <a class="navbar-brand" href="#">Portfolio</a>
-    <a href="#" data-target="#navbarContent" data-toggle="collapse"><i
-                class="fas fa-bars fa-2x py-2 p-1"></i></a>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <button class="navbar-toggler" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         {% if is_granted('ROLE_USER') %}
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('app_homepage') }}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                {#                {% if is_granted('ROLE_ADMIN') %}#}
-                {#                    <li class="nav-item">#}
-                {#                        <a class="nav-link" href="{{ url('admin_home') }}">Admin</a>#}
-                {#                    </li>#}
-                {#                {% endif %}#}
-            </ul>
-        {% endif %}
-
-        {#        <ul class="navbar-nav ml-auto">#}
-        {#            <li class="nav-item dropdown">#}
-        {#                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"#}
-        {#                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-        {#                    Login Debug#}
-        {#                </a>#}
-        {#                <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
-        {#                    <a class="dropdown-item" href="{{ url('auth_login') }}">Login</a>#}
-        {#                    <a class="dropdown-item" href="{{ url('auth_logout') }}">Logout</a>#}
-        {#                    <div class="dropdown-divider"></div>#}
-        {#                    <a class="dropdown-item" href="{{ url('auth_register') }}">Register</a>#}
-        {#                </div>#}
-        {#            </li>#}
-        {#        </ul>#}
-        {#        <form class="form-inline my-2 my-lg-0">#}
-        {#            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">#}
-        {#            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
-        {#        </form>#}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url('app_homepage') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            {% endif %}
     </div>
 </nav>
