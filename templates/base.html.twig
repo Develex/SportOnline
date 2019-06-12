@@ -6,35 +6,75 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css">#}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a3a88fceae.js"></script>
     <style>
         html, body {
             height: 100%;
             overflow-x: hidden;
         }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            margin-left: -15rem;
+            -webkit-transition: margin .25s ease-out;
+            -moz-transition: margin .25s ease-out;
+            -o-transition: margin .25s ease-out;
+            transition: margin .25s ease-out;
+        }
+
+        #sidebar-wrapper .sidebar-heading {
+            padding: 0.875rem 1.25rem;
+            font-size: 1.2rem;
+        }
+
+        #sidebar-wrapper .list-group {
+            width: 15rem;
+        }
+
+        #page-content-wrapper {
+            min-width: 100vw;
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: 0;
+        }
+
+        @media (min-width: 768px) {
+            #sidebar-wrapper {
+                margin-left: 0;
+            }
+
+            #page-content-wrapper {
+                min-width: 0;
+                width: 100%;
+            }
+
+            #wrapper.toggled #sidebar-wrapper {
+                margin-left: -15rem;
+            }
+        }
+
     </style>
 </head>
 <body>
-<div class="container-fluid h-100">
-    <div class="row h-100">
-        <div class="col h-100">
-            <div class="d-flex h-100 flex-column">
-                <div class="row">
-                    {% include 'header.html.twig' %}
-                </div>
-                <div class="row bg-primary flex-grow-1">
-                    <div class="col-1"></div>
-                    <div class="col-10">
-                        <div class="w-100 pt-5">
-                            {% block body %}{% endblock %}
-                        </div>
-                    </div>
-                    <div class="col-1"></div>
-                </div>
-            </div>
-        </div>
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    {% if is_granted("ROLE_USER") %}
+        {% include 'sidebar.html.twig' %}
+    {% endif %}
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        {% include 'header.html.twig' %}
+        {% block body %}{% endblock %}
+
     </div>
+    <!-- /#page-content-wrapper -->
+
 </div>
 
 {% block javascripts %}
@@ -42,6 +82,13 @@
     <script rel="script" src="{{ asset('js/popper.min.js') }}"></script>
     <script rel="script" src="{{ asset('js/popper-utils.min.js') }}"></script>
     <script rel="script" src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
 {% endblock %}
 
 </body>
