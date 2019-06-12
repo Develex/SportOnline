@@ -1,11 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <button class="navbar-toggler" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        {% if is_granted('ROLE_USER') %}
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url('app_homepage') }}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            {% endif %}
+<nav class="navbar navbar-expand-lg navbar-light bg-primary border-bottom">
+    {% if is_granted("ROLE_USER") %}
+        <button class="navbar-toggler" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
+    {% endif %}
+
+    <div class="mx-auto">
+        <h1>Sportonline</h1>
     </div>
 </nav>
