@@ -37,3 +37,4 @@ security:
     access_control:
         - { path: ^/auth/$, allow_if: "not has_role('ROLE_USER')" }
         - { path: ^/home, allow_if: "has_role('ROLE_USER')" }
+        - { path: ^/beheer, allow_if: "has_role('ROLE_ADMIN')" }

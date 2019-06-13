@@ -1,11 +1,24 @@
 <div class="bg-primary border-right" id="sidebar-wrapper">
-    <div class="sidebar-heading">Sportonline</div>
+    <div class="sidebar-heading"><img height="200px" align="Sport Online"
+                                      src="{{ asset("images/Logo_Sport_Online.png") }}"></div>
+
     <div class="list-group list-group-flush">
-        <a href="{{ url('app_homepage') }}" class="list-group-item list-group-item-action bg-primary">Home</a>
-        <a href="#" class="list-group-item list-group-item-action bg-primary">Placeholder</a>
-        <a href="#" class="list-group-item list-group-item-action bg-primary">Placeholder</a>
-        <a href="#" class="list-group-item list-group-item-action bg-primary">Placeholder</a>
-        <a href="#" class="list-group-item list-group-item-action bg-primary">Placeholder</a>
-        <a href="{{ url('admin_dashboard') }}" class="list-group-item list-group-item-action bg-primary">Beheer</a>
+        <a href="{{ url('app_homepage') }}" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-home mr-1"></i>Home</a>
+        <a href="#" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-sitemap mr-1"></i>Categorie 1</a>
+        <a href="#" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-sitemap mr-1"></i>Categorie 2</a>
+        <a href="#" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-sitemap mr-1"></i>Categorie 3</a>
+        <a href="#" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-sitemap mr-1"></i>Categorie 4</a>
+        <a href="#" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-sitemap mr-1"></i>Categorie 5</a>
+        <a href="#" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-sitemap mr-1"></i>Categorie 6</a>
+        {% if is_granted("ROLE_ADMIN") %}
+            <a href="#" data-target="#admin" data-toggle="collapse" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-users-cog mr-1"></i>Beheer</a>
+            <div class="collapse" id="admin">
+                <a href="{{ url('admin_dashboard') }}" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-tachometer-alt mr-1"></i>Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-users mr-1"></i>Gebruikers</a>
+                <a href="#" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-video mr-1"></i>Video's</a>
+
+            </div>
+        {% endif %}
+        <a href="{{ url('auth_logout') }}" class="list-group-item list-group-item-action bg-primary text-white"><i class="fas fa-sign-out-alt mr-1"></i>Uitloggen</a>
     </div>
 </div>
