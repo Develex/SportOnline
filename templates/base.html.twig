@@ -6,8 +6,8 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/theme1.min.css') }}">
-{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css">#}
+    <link rel="stylesheet" href="{{ asset('css/theme1.min.css') }}">
+    {#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css">#}
     <script src="https://kit.fontawesome.com/a3a88fceae.js"></script>
     <style>
         html, body {
@@ -88,9 +88,18 @@
     <script rel="script" src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
+        $(document).ready(function () {
+            var pathname = window.location.pathname;
+            if (pathname.indexOf("/beheer") != -1) {
+                $("#admin").collapse("toggle");
+                // console.log('true');
+            }
+            // console.log(pathname);
+
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
         });
     </script>
 {% endblock %}

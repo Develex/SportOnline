@@ -5,6 +5,11 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class VideoController
+ * @package App\Controller
+ * @Route("/beheer", name="admin_")
+ */
 class VideoController extends AbstractController
 {
     /**
@@ -12,7 +17,7 @@ class VideoController extends AbstractController
      */
     public function index()
     {
-        return $this->render('video/index.html.twig', [
+        return $this->render('admin/video/index.html.twig', [
             'controller_name' => 'VideoController',
         ]);
     }
